@@ -3,4 +3,3 @@ RUN apt update && \
     apt install -y python3 python3-dev && \
     apt install -y build-essential uwsgi uwsgi-plugin-python3
 COPY uwsgi.ini /uwsgi.ini
-RUN uwsgi --ini /uwsgi.ini
