@@ -35,7 +35,7 @@ jobs:
         run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/uwsgi:${{ steps.vars.outputs.tag }} --tag ${{ secrets.DOCKER_USERNAME }}/uwsgi:latest
 
       - name: push
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/uwsgi:${{ steps.vars.outputs.tag }} --all-tags
+        run: docker push -t ${{ secrets.DOCKER_USERNAME }}/uwsgi:${{ steps.vars.outputs.tag }} --all-tags
 
       #- name: Build and push
       #  uses: docker/build-push-action@v2
