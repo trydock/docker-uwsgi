@@ -32,7 +32,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: build
-        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/uwsgi:${{ steps.vars.outputs.tag }}
+        run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/uwsgi:${{ steps.vars.outputs.tag }} --tag ${{ secrets.DOCKER_USERNAME }}/uwsgi:latest
           
       - name: Build and push
         uses: docker/build-push-action@v2
