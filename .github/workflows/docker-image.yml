@@ -34,13 +34,13 @@ jobs:
       - name: build
         run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/uwsgi:${{ steps.vars.outputs.tag }} --tag ${{ secrets.DOCKER_USERNAME }}/uwsgi:latest
 
-      #- name: push
-      #  run: docker push ${{ secrets.DOCKER_USERNAME }}/uwsgi:${{ steps.vars.outputs.tag }} --all-tags
+      - name: push
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/uwsgi:${{ steps.vars.outputs.tag }} --all-tags
 
-      - name: Build and push
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/uwsgi:${{ steps.vars.outputs.tag }} --all-tags
+      #- name: Build and push
+      #  uses: docker/build-push-action@v2
+      #  with:
+      #    context: .
+      #    file: ./Dockerfile
+      #    push: true
+      #    tags: ${{ secrets.DOCKER_USERNAME }}/uwsgi:${{ steps.vars.outputs.tag }} --all-tags
