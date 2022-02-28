@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - 'v*.*.*'
+  schedule:
+    - cron: '55 10 * * *'
 
 jobs:
   push_to_registry:
