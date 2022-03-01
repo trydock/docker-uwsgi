@@ -27,10 +27,7 @@ jobs:
     name: Testing Parameterized Actions
     runs-on: ubuntu-latest
     
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        
+    steps:      
       - name: Check output
         - run: |
             echo "Tag String: ${{ github.event.inputs.tagString }}"
