@@ -15,7 +15,7 @@ on:
         description: 'Choose A Tag (must be unique)'     
         required: true
       tagCreator:
-        description: 'Choose A Branch'     
+        description: 'Enter your name'     
         required: true
       tagDescription:
         description: 'Describe This Release'
