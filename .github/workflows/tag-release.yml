@@ -20,16 +20,15 @@ on:
         default: 'main'
       tagDescription:
         description: 'Describe This Release'
-        default: 'new build'
         
 jobs:
   tag_and_release:
-    name: Testing Parameterized Actions
+    name: Create a tag and release
     runs-on: ubuntu-latest
     
     steps:      
       - name: Check output
-        - run: |
-            echo "Tag String: ${{ github.event.inputs.tagString }}"
-            echo "Tag Branch: ${{ github.event.inputs.tagBranch }}"
+        run: |
+          echo "Tag String: ${{ github.event.inputs.tagString }}"
+          echo "Tag Branch: ${{ github.event.inputs.tagBranch }}"
             echo "Tag Description: ${{ github.event.inputs.tagDescription }}"
