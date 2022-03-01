@@ -24,7 +24,7 @@ on:
         
 jobs:
   test:
-    name: testing
+    name: Testing Parameterized Actions
     runs-on: ubuntu-latest
     
     steps:
