@@ -14,10 +14,9 @@ on:
       tagString:
         description: 'Choose A Tag (must be unique)'     
         required: true
-      tagBranch:
+      tagCreator:
         description: 'Choose A Branch'     
         required: true
-        default: 'main'
       tagDescription:
         description: 'Describe This Release'
         default: 'New Build'
@@ -31,5 +30,5 @@ jobs:
       - name: Check output
         run: |
           echo "Tag String: ${{ github.event.inputs.tagString }}"
-          echo "Tag Branch: ${{ github.event.inputs.tagBranch }}"
+          echo "Tag Author: ${{ github.event.inputs.tagCreator }}"
             echo "Tag Description: ${{ github.event.inputs.tagDescription }}"
