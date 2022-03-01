@@ -23,7 +23,7 @@ on:
         default: 'new build'
         
 jobs:
-  test:
+  tag_and_release:
     name: Testing Parameterized Actions
     runs-on: ubuntu-latest
     
