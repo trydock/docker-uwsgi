@@ -1,0 +1,38 @@
+#################################################################################################################################
+# Demo Parameterized Actions
+#
+# Source : https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/
+# Supported by:
+#             - https://stackoverflow.com/questions/62736315/invoke-github-actions-workflow-manually-and-pass-parameters
+#################################################################################################################################
+
+name: Create a Tag and Release
+
+on: 
+  workflow_dispatch:
+    inputs:
+      tagString:
+        description: 'Choose A Tag (must be unique)'     
+        required: true
+      tagBranch:
+        description: 'Choose A Branch'     
+        required: true
+        default: 'main'
+      tagDescription:
+        description: 'Describe This Release'
+        default: 'new build'
+        
+jobs:
+  test:
+    name: testing
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Check output
+        - run: |
+            echo "Tag String: ${{ github.event.inputs.tagString }}"
+            echo "Tag Branch: ${{ github.event.inputs.tagBranch }}"
+            echo "Tag Description: ${{ github.event.inputs.tagDescription }}"
