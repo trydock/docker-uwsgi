@@ -20,6 +20,7 @@ on:
         default: 'main'
       tagDescription:
         description: 'Describe This Release'
+        default: 'New Build'
         
 jobs:
   tag_and_release:
